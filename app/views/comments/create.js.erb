@@ -25,15 +25,15 @@ addCommentToView = () => {
   footer.innerHTML += "<a class='card-footer-item deleter' data-confirm='Are you sure?' rel='nofollow' data-method='delete' href='/posts/<%=@post.id%>/comments/<%=@comment.id%>'><i class='fas fa-trash-alt' aria-hidden='true'></i></a>"
   footer.innerHTML += "<% end %>"
 
+  cardContent.appendChild(media);
+  cardContent.appendChild(commentMessage);
+  cardContent.appendChild(footer);
+
   commentContainer.appendChild(cardContent);
-  commentContainer.appendChild(media);
-  commentContainer.appendChild(commentMessage);
-  commentContainer.appendChild(footer);
 
   comment_box.appendChild(commentContainer);
 
 }
-
 
 addCommentToView();
 
