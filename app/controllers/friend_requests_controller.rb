@@ -14,6 +14,11 @@ class FriendRequestsController < ApplicationController
     end
   end
 
+  def index
+    @incoming = FriendRequest.where(friend: current_user)
+    @outgoing = current_user.friend_request
+  end
+
   private
   def friend_request_setup
     @friend_request = FriendRequest.find(params[:id])
