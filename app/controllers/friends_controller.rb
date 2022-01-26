@@ -6,7 +6,9 @@ class FriendsController < ApplicationController
   end
 
   def destroy
-
+    current_user.remvove_friend(@friend)
+    head :no_content
+    # redirect_to posts_path
   end
 
   private
