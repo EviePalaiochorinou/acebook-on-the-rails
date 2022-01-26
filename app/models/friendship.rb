@@ -5,7 +5,16 @@ class Friendship < ApplicationRecord
   belongs_to :user
   belongs_to :friend, class_name: "User"
 
+  validates :user, presence: true
+  validates :friend, presence: true, uniqueness: { scope: :user }
+
+  validate :not_self
+
   private
+
+  def not_self
+    errors.add("you can't befriend yourself, sorry") if user == friend # current_user == friend
+  end
 
   def create_inverse_relationship
     friend.friendships.create(friend: user)
