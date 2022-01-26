@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'friends/index'
+  get 'friends/destroy'
   resources :friend_requests
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
