@@ -13,4 +13,7 @@ class User < ApplicationRecord
     has_many :likes
 
     has_one_attached :profile_picture
+
+    has_many :friend_requests, dependent: :destroy
+    has_many :pending_friends, through: :friend_requests, source: :friend # or source : :friends?
 end
