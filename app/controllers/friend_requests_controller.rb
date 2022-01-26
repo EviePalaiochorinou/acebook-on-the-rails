@@ -19,6 +19,12 @@ class FriendRequestsController < ApplicationController
     @outgoing = current_user.friend_request
   end
 
+  def destroy
+    @friend_request.destroy
+    head :no_content
+    # redirect_to posts_path
+  end
+
   private
   def friend_request_setup
     @friend_request = FriendRequest.find(params[:id])
