@@ -1,7 +1,7 @@
 class FriendRequestsController < ApplicationController
   before_action :friend_request_setup, except: [:index, :create]
 
-  def create
+  def create # send a friend request to another user
     friend = User.find(params[:friend_id])
     @friend_request = current-user.friend_requests.new(friend: :friend)
 
@@ -14,12 +14,12 @@ class FriendRequestsController < ApplicationController
     end
   end
 
-  def index
+  def index # view incoming and outcoming requests
     @incoming = FriendRequest.where(friend: current_user)
     @outgoing = current_user.friend_request
   end
 
-  def update
+  def update # accept friend requests
     @friend_request.accept
     # redirect_to posts_path
     head :no_content

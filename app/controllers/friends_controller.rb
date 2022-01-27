@@ -1,7 +1,7 @@
 class FriendsController < ApplicationController
   before_action :friend_setup, only: :destroy
 
-  def index
+  def index # show all 
     @friends = current_user.friends
   end
 
