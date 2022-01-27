@@ -2,7 +2,9 @@ module LikesHelper
 
   def likes_count(post)
     likes = post.likes.count
+    unless likes == 0 then
     likes < 2 ? "#{likes} Like" : "#{likes} Likes"
+    end
   end
 
   def liked_by_users(post)
