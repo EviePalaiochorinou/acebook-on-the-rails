@@ -59,11 +59,16 @@ https://immense-sea-58140.herokuapp.com/
 - User can sign up
 - User can log in
 - User can create a post (from news feed or own profile page)
+- User can edit their post
 - User can comment on their or another's post
+- Use can edit their comment within 10 mins of posting
 - User can like their or another's post
 - User can unlike their or another's post
-- User can delete their own posts
+- User can see the likes count and last liker on a post
+- User can delete their own posts and comments
+- User can see a flash message when they delete a post or comment
 - User can view their or someone else's profile page
+- Use can toggle newsfeed by 'all posts' or 'friends' posts' only
 - User can upload their own profile picture
 - User's name and profile picture is displayed next to their post, on the navigation bar, and also on their profile page
 - User can log out
